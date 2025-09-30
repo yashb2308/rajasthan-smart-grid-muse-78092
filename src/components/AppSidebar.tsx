@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/sidebar";
 
 const navigationItems = [
-  { title: "Dashboard", url: "/", icon: Activity },
+  { title: "Dashboard", url: "/dashboard", icon: Activity },
   { title: "Forecasting", url: "/forecast", icon: BarChart3 },
   { title: "Architecture", url: "/architecture", icon: Zap },
   { title: "Optimization", url: "/optimization", icon: Lightbulb },
@@ -29,7 +29,7 @@ export function AppSidebar() {
             <Zap className="h-6 w-6 text-sidebar-primary-foreground" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-sidebar-foreground">REOP</h2>
+            <h2 className="text-lg font-semibold text-sidebar-foreground">GreenGrid</h2>
             <p className="text-xs text-sidebar-foreground/70">Energy Orchestration</p>
           </div>
         </div>

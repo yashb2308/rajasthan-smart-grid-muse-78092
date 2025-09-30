@@ -1,19 +1,20 @@
-import { ReactNode } from "react";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { Outlet } from "react-router-dom";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-export function Layout({ children }: LayoutProps) {
+export function Layout() {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
         <AppSidebar />
-        <main className="flex-1 overflow-auto">
-          {children}
-        </main>
+        <div className="flex-1 flex flex-col overflow-auto">
+          <header className="h-14 border-b border-border flex items-center px-4 bg-background sticky top-0 z-10">
+            <SidebarTrigger />
+          </header>
+          <main className="flex-1 overflow-auto">
+            <Outlet />
+          </main>
+        </div>
       </div>
     </SidebarProvider>
   );
